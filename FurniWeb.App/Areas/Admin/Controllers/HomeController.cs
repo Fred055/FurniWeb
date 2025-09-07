@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace FurniWeb.App.Controllers
+namespace FurniWeb.App.Areas.Admin.Controllers
 {
-    [Area("admin")]
     public class HomeController : Controller
     {
         public IActionResult Index()
