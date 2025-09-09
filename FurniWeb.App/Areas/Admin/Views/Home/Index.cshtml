@@ -1,382 +1,938 @@
-﻿<div class="az-content az-content-dashboard">
-    <div class="container">
-        <div class="az-content-body">
-            <div class="az-dashboard-one-title">
-                <div>
-                    <h2 class="az-dashboard-title">Hi, welcome back!</h2>
-                    <p class="az-dashboard-text">Your web analytics dashboard template.</p>
+﻿<!-- partial -->
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-12 grid-margin">
+                <div class="d-flex justify-content-between flex-wrap">
+                    <div class="d-flex align-items-end flex-wrap">
+                        <div class="me-md-3 me-xl-5">
+                            <h2>Welcome back,</h2>
+                            <p class="mb-md-0">Your analytics dashboard template.</p>
+                        </div>
+                        <div class="d-flex">
+                            <i class="mdi mdi-home text-muted hover-cursor"></i>
+                            <p class="text-muted mb-0 hover-cursor">
+                                &nbsp;/&nbsp;Dashboard&nbsp;/&nbsp;
+                            </p>
+                            <p class="text-primary mb-0 hover-cursor">Analytics</p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-end flex-wrap">
+                        <button type="button"
+                                class="btn btn-light bg-white btn-icon me-3 d-none d-md-block">
+                            <i class="mdi mdi-download text-muted"></i>
+                        </button>
+                        <button type="button"
+                                class="btn btn-light bg-white btn-icon me-3 mt-2 mt-xl-0">
+                            <i class="mdi mdi-clock-outline text-muted"></i>
+                        </button>
+                        <button type="button"
+                                class="btn btn-light bg-white btn-icon me-3 mt-2 mt-xl-0">
+                            <i class="mdi mdi-plus text-muted"></i>
+                        </button>
+                        <button class="btn btn-primary mt-2 mt-xl-0">
+                            Download report
+                        </button>
+                    </div>
                 </div>
-                <div class="az-content-header-right">
-                    <div class="media">
-                        <div class="media-body">
-                            <label>Start Date</label>
-                            <h6>Oct 10, 2018</h6>
-                        </div><!-- media-body -->
-                    </div><!-- media -->
-                    <div class="media">
-                        <div class="media-body">
-                            <label>End Date</label>
-                            <h6>Oct 23, 2018</h6>
-                        </div><!-- media-body -->
-                    </div><!-- media -->
-                    <div class="media">
-                        <div class="media-body">
-                            <label>Event Category</label>
-                            <h6>All Categories</h6>
-                        </div><!-- media-body -->
-                    </div><!-- media -->
-                    <a href="" class="btn btn-purple">Export</a>
-                </div>
-            </div><!-- az-dashboard-one-title -->
-
-            <div class="az-dashboard-nav">
-                <nav class="nav">
-                    <a class="nav-link active" data-toggle="tab" href="#">Overview</a>
-                    <a class="nav-link" data-toggle="tab" href="#">Audiences</a>
-                    <a class="nav-link" data-toggle="tab" href="#">Demographics</a>
-                    <a class="nav-link" data-toggle="tab" href="#">More</a>
-                </nav>
-
-                <nav class="nav">
-                    <a class="nav-link" href="#"><i class="far fa-save"></i> Save Report</a>
-                    <a class="nav-link" href="#"><i class="far fa-file-pdf"></i> Export to PDF</a>
-                    <a class="nav-link" href="#"><i class="far fa-envelope"></i>Send to Email</a>
-                    <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a>
-                </nav>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body dashboard-tabs p-0">
+                        <ul class="nav nav-tabs px-4 border-left-0 border-top-0 border-right-0"
+                            role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active"
+                                   id="overview-tab"
+                                   data-bs-toggle="tab"
+                                   href="#overview"
+                                   role="tab"
+                                   aria-controls="overview"
+                                   aria-selected="true">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   id="sales-tab"
+                                   data-bs-toggle="tab"
+                                   href="#sales"
+                                   role="tab"
+                                   aria-controls="sales"
+                                   aria-selected="false">Sales</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   id="purchases-tab"
+                                   data-bs-toggle="tab"
+                                   href="#purchases"
+                                   role="tab"
+                                   aria-controls="purchases"
+                                   aria-selected="false">Purchases</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content py-0 px-0 border-left-0 border-bottom-0 border-right-0">
+                            <div class="tab-pane fade show active"
+                                 id="overview"
+                                 role="tabpanel"
+                                 aria-labelledby="overview-tab">
+                                <div class="d-flex flex-wrap justify-content-xl-between">
+                                    <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
+                                        <div class="icon-box-secondary me-3">
+                                            <i class="mdi mdi-calendar-heart"></i>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small class="mb-1 text-muted">Start date</small>
+                                            <div class="dropdown">
+                                                <a class="btn btn-secondary dropdown-toggle p-0 bg-transparent border-0 text-dark shadow-none font-weight-medium"
+                                                   href="#"
+                                                   role="button"
+                                                   id="dropdownMenuLinkA"
+                                                   data-bs-toggle="dropdown"
+                                                   aria-haspopup="true"
+                                                   aria-expanded="false">
+                                                    <h5 class="mb-0 d-inline-block">
+                                                        26 Jul 2018
+                                                    </h5>
+                                                </a>
+                                                <div class="dropdown-menu"
+                                                     aria-labelledby="dropdownMenuLinkA">
+                                                    <a class="dropdown-item" href="#">12 Aug 2018</a>
+                                                    <a class="dropdown-item" href="#">22 Sep 2018</a>
+                                                    <a class="dropdown-item" href="#">21 Oct 2018</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
+                                        <div class="icon-box-secondary me-3">
+                                            <i class="mdi mdi-currency-usd"></i>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small class="mb-1 text-muted">Revenue</small>
+                                            <h5 class="me-2 mb-0">$577545</h5>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
+                                        <div class="icon-box-secondary me-3">
+                                            <i class="mdi mdi-eye"></i>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small class="mb-1 text-muted">Total views</small>
+                                            <h5 class="me-2 mb-0">9833550</h5>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
+                                        <div class="icon-box-secondary me-3">
+                                            <i class="mdi mdi-download"></i>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small class="mb-1 text-muted">Downloads</small>
+                                            <h5 class="me-2 mb-0">2233783</h5>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex py-3 border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
+                                        <div class="icon-box-secondary me-3">
+                                            <i class="mdi mdi-flag"></i>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small class="mb-1 text-muted">Flagged</small>
+                                            <h5 class="me-2 mb-0">3497843</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade"
+                                 id="sales"
+                                 role="tabpanel"
+                                 aria-labelledby="sales-tab">
+                                <div class="d-flex flex-wrap justify-content-xl-between">
+                                    <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
+                                        <div class="icon-box-secondary me-3">
+                                            <i class="mdi mdi-calendar-heart"></i>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small class="mb-1 text-muted">Start date</small>
+                                            <div class="dropdown">
+                                                <a class="btn btn-secondary dropdown-toggle p-0 bg-transparent border-0 text-dark shadow-none font-weight-medium"
+                                                   href="#"
+                                                   role="button"
+                                                   id="dropdownMenuLinkB"
+                                                   data-bs-toggle="dropdown"
+                                                   aria-haspopup="true"
+                                                   aria-expanded="false">
+                                                    <h5 class="mb-0 d-inline-block">
+                                                        26 Jul 2018
+                                                    </h5>
+                                                </a>
+                                                <div class="dropdown-menu"
+                                                     aria-labelledby="dropdownMenuLinkB">
+                                                    <a class="dropdown-item" href="#">12 Aug 2018</a>
+                                                    <a class="dropdown-item" href="#">22 Sep 2018</a>
+                                                    <a class="dropdown-item" href="#">21 Oct 2018</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
+                                        <div class="icon-box-secondary me-3">
+                                            <i class="mdi mdi-currency-usd"></i>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small class="mb-1 text-muted">Revenue</small>
+                                            <h5 class="me-2 mb-0">$577545</h5>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
+                                        <div class="icon-box-secondary me-3">
+                                            <i class="mdi mdi-eye"></i>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small class="mb-1 text-muted">Total views</small>
+                                            <h5 class="me-2 mb-0">9833550</h5>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
+                                        <div class="icon-box-secondary me-3">
+                                            <i class="mdi mdi-download"></i>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small class="mb-1 text-muted">Downloads</small>
+                                            <h5 class="me-2 mb-0">2233783</h5>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex py-3 border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
+                                        <div class="icon-box-secondary me-3">
+                                            <i class="mdi mdi-flag"></i>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small class="mb-1 text-muted">Flagged</small>
+                                            <h5 class="me-2 mb-0">3497843</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade"
+                                 id="purchases"
+                                 role="tabpanel"
+                                 aria-labelledby="purchases-tab">
+                                <div class="d-flex flex-wrap justify-content-xl-between">
+                                    <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
+                                        <div class="icon-box-secondary me-3">
+                                            <i class="mdi mdi-calendar-heart"></i>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small class="mb-1 text-muted">Start date</small>
+                                            <div class="dropdown">
+                                                <a class="btn btn-secondary dropdown-toggle p-0 bg-transparent border-0 text-dark shadow-none font-weight-medium"
+                                                   href="#"
+                                                   role="button"
+                                                   id="dropdownMenuLinkC"
+                                                   data-bs-toggle="dropdown"
+                                                   aria-haspopup="true"
+                                                   aria-expanded="false">
+                                                    <h5 class="mb-0 d-inline-block">
+                                                        26 Jul 2018
+                                                    </h5>
+                                                </a>
 
-            <div class="row row-sm mg-b-20">
-                <div class="col-lg-7 ht-lg-100p">
-                    <div class="card card-dashboard-one">
-                        <div class="card-header">
-                            <div>
-                                <h6 class="card-title">Website Audience Metrics</h6>
-                                <p class="card-text">Audience to which the users belonged while on the current date range.</p>
-                            </div>
-                            <div class="btn-group">
-                                <button class="btn active">Day</button>
-                                <button class="btn">Week</button>
-                                <button class="btn">Month</button>
-                            </div>
-                        </div><!-- card-header -->
-                        <div class="card-body">
-                            <div class="card-body-top">
-                                <div>
-                                    <label class="mg-b-0">Users</label>
-                                    <h2>13,956</h2>
-                                </div>
-                                <div>
-                                    <label class="mg-b-0">Bounce Rate</label>
-                                    <h2>33.50%</h2>
-                                </div>
-                                <div>
-                                    <label class="mg-b-0">Page Views</label>
-                                    <h2>83,123</h2>
-                                </div>
-                                <div>
-                                    <label class="mg-b-0">Sessions</label>
-                                    <h2>16,869</h2>
-                                </div>
-                            </div><!-- card-body-top -->
-                            <div class="flot-chart-wrapper">
-                                <div id="flotChart" class="flot-chart"></div>
-                            </div><!-- flot-chart-wrapper -->
-                        </div><!-- card-body -->
-                    </div><!-- card -->
-                </div><!-- col -->
-                <div class="col-lg-5 mg-t-20 mg-lg-t-0">
-                    <div class="row row-sm">
-                        <div class="col-sm-6">
-                            <div class="card card-dashboard-two">
-                                <div class="card-header">
-                                    <h6>33.50% <i class="icon ion-md-trending-up tx-success"></i> <small>18.02%</small></h6>
-                                    <p>Bounce Rate</p>
-                                </div><!-- card-header -->
-                                <div class="card-body">
-                                    <div class="chart-wrapper">
-                                        <div id="flotChart1" class="flot-chart"></div>
-                                    </div><!-- chart-wrapper -->
-                                </div><!-- card-body -->
-                            </div><!-- card -->
-                        </div><!-- col -->
-                        <div class="col-sm-6 mg-t-20 mg-sm-t-0">
-                            <div class="card card-dashboard-two">
-                                <div class="card-header">
-                                    <h6>86k <i class="icon ion-md-trending-down tx-danger"></i> <small>0.86%</small></h6>
-                                    <p>Total Users</p>
-                                </div><!-- card-header -->
-                                <div class="card-body">
-                                    <div class="chart-wrapper">
-                                        <div id="flotChart2" class="flot-chart"></div>
-                                    </div><!-- chart-wrapper -->
-                                </div><!-- card-body -->
-                            </div><!-- card -->
-                        </div><!-- col -->
-                        <div class="col-sm-12 mg-t-20">
-                            <div class="card card-dashboard-three">
-                                <div class="card-header">
-                                    <p>All Sessions</p>
-                                    <h6>16,869 <small class="tx-success"><i class="icon ion-md-arrow-up"></i> 2.87%</small></h6>
-                                    <small>The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc.</small>
-                                </div><!-- card-header -->
-                                <div class="card-body">
-                                    <div class="chart"><canvas id="chartBar5"></canvas></div>
+                                                <div class="dropdown-menu"
+                                                     aria-labelledby="dropdownMenuLinkC">
+                                                    <a class="dropdown-item" href="#">12 Aug 2018</a>
+                                                    <a class="dropdown-item" href="#">22 Sep 2018</a>
+                                                    <a class="dropdown-item" href="#">21 Oct 2018</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
+                                        <div class="icon-box-secondary me-3">
+                                            <i class="mdi mdi-currency-usd"></i>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small class="mb-1 text-muted">Revenue</small>
+                                            <h5 class="me-2 mb-0">$577545</h5>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
+                                        <div class="icon-box-secondary me-3">
+                                            <i class="mdi mdi-eye"></i>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small class="mb-1 text-muted">Total views</small>
+                                            <h5 class="me-2 mb-0">9833550</h5>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
+                                        <div class="icon-box-secondary me-3">
+                                            <i class="mdi mdi-download"></i>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small class="mb-1 text-muted">Downloads</small>
+                                            <h5 class="me-2 mb-0">2233783</h5>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex py-3 border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
+                                        <div class="icon-box-secondary me-3">
+                                            <i class="mdi mdi-flag"></i>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small class="mb-1 text-muted">Flagged</small>
+                                            <h5 class="me-2 mb-0">3497843</h5>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div><!-- row -->
-                </div><!--col -->
-            </div><!-- row -->
-
-            <div class="row row-sm mg-b-20">
-                <div class="col-lg-4">
-                    <div class="card card-dashboard-pageviews">
-                        <div class="card-header">
-                            <h6 class="card-title">Page Views by Page Title</h6>
-                            <p class="card-text">This report is based on 100% of sessions.</p>
-                        </div><!-- card-header -->
-                        <div class="card-body">
-                            <div class="az-list-item">
-                                <div>
-                                    <h6>Admin Home</h6>
-                                    <span>/demo/admin/index.html</span>
-                                </div>
-                                <div>
-                                    <h6 class="tx-primary">7,755</h6>
-                                    <span>31.74% (-100.00%)</span>
-                                </div>
-                            </div><!-- list-group-item -->
-                            <div class="az-list-item">
-                                <div>
-                                    <h6>Form Elements</h6>
-                                    <span>/demo/admin/forms.html</span>
-                                </div>
-                                <div>
-                                    <h6 class="tx-primary">5,215</h6>
-                                    <span>28.53% (-100.00%)</span>
-                                </div>
-                            </div><!-- list-group-item -->
-                            <div class="az-list-item">
-                                <div>
-                                    <h6>Utilities</h6>
-                                    <span>/demo/admin/util.html</span>
-                                </div>
-                                <div>
-                                    <h6 class="tx-primary">4,848</h6>
-                                    <span>25.35% (-100.00%)</span>
-                                </div>
-                            </div><!-- list-group-item -->
-                            <div class="az-list-item">
-                                <div>
-                                    <h6>Form Validation</h6>
-                                    <span>/demo/admin/validation.html</span>
-                                </div>
-                                <div>
-                                    <h6 class="tx-primary">3,275</h6>
-                                    <span>23.17% (-100.00%)</span>
-                                </div>
-                            </div><!-- list-group-item -->
-                            <div class="az-list-item">
-                                <div>
-                                    <h6>Modals</h6>
-                                    <span>/demo/admin/modals.html</span>
-                                </div>
-                                <div>
-                                    <h6 class="tx-primary">3,003</h6>
-                                    <span>22.21% (-100.00%)</span>
-                                </div>
-                            </div><!-- list-group-item -->
-                        </div><!-- card-body -->
-                    </div><!-- card -->
-
-                </div><!-- col -->
-                <div class="col-lg-8 mg-t-20 mg-lg-t-0">
-                    <div class="card card-dashboard-four">
-                        <div class="card-header">
-                            <h6 class="card-title">Sessions by Channel</h6>
-                        </div><!-- card-header -->
-                        <div class="card-body row">
-                            <div class="col-md-6 d-flex align-items-center">
-                                <div class="chart"><canvas id="chartDonut"></canvas></div>
-                            </div><!-- col -->
-                            <div class="col-md-6 col-lg-5 mg-lg-l-auto mg-t-20 mg-md-t-0">
-                                <div class="az-traffic-detail-item">
-                                    <div>
-                                        <span>Organic Search</span>
-                                        <span>1,320 <span>(25%)</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-xl-3 grid-margin stretch-card">
+                <div class="card">
+                    <div id="cashSalesCarousel"
+                         class="carousel slide card-carousel"
+                         data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card-body border-bottom">
+                                    <p class="card-title">Cash sales</p>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <canvas id="cash-sales-chart"></canvas>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center ms-2">
+                                                <h2 class="font-weight-bold mb-0 me-1">30%</h2>
+                                                <i class="mdi mdi-chevron-up text-success icon-md"></i>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-purple wd-25p" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div><!-- progress -->
                                 </div>
-                                <div class="az-traffic-detail-item">
-                                    <div>
-                                        <span>Email</span>
-                                        <span>987 <span>(20%)</span></span>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-primary wd-20p" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div><!-- progress -->
-                                </div>
-                                <div class="az-traffic-detail-item">
-                                    <div>
-                                        <span>Referral</span>
-                                        <span>2,010 <span>(30%)</span></span>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-info wd-30p" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div><!-- progress -->
-                                </div>
-                                <div class="az-traffic-detail-item">
-                                    <div>
-                                        <span>Social</span>
-                                        <span>654 <span>(15%)</span></span>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-teal wd-15p" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div><!-- progress -->
-                                </div>
-                                <div class="az-traffic-detail-item">
-                                    <div>
-                                        <span>Other</span>
-                                        <span>400 <span>(10%)</span></span>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-gray-500 wd-10p" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div><!-- progress -->
-                                </div>
-                            </div><!-- col -->
-                        </div><!-- card-body -->
-                    </div><!-- card-dashboard-four -->
-                </div><!-- col -->
-            </div><!-- row -->
-
-            <div class="row row-sm mg-b-20 mg-lg-b-0">
-                <div class="col-lg-5 col-xl-4">
-                    <div class="row row-sm">
-                        <div class="col-md-6 col-lg-12 mg-b-20 mg-md-b-0 mg-lg-b-20">
-                            <div class="card card-dashboard-five">
-                                <div class="card-header">
-                                    <h6 class="card-title">Acquisition</h6>
-                                    <span class="card-text">Tells you where your visitors originated from, such as search engines, social networks or website referrals.</span>
-                                </div><!-- card-header -->
-                                <div class="card-body row row-sm">
-                                    <div class="col-6 d-sm-flex align-items-center">
-                                        <div class="card-chart bg-primary">
-                                            <span class="peity-bar" data-peity='{"fill": ["#fff"], "width": 20, "height": 20 }'>6,4,7,5,7</span>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <div>
+                                            <p>Sales last month</p>
+                                            <h2 class="mb-0">8543</h2>
+                                            <div class="d-flex align-items-center mt-2">
+                                                <small>0.321%</small>
+                                                <i class="mdi mdi-chevron-up"></i>
+                                            </div>
                                         </div>
                                         <div>
-                                            <label>Bounce Rate</label>
-                                            <h4>33.50%</h4>
+                                            <div class="icon-box-primary icon-box-lg">
+                                                <i class="mdi mdi-wallet"></i>
+                                            </div>
                                         </div>
-                                    </div><!-- col -->
-                                    <div class="col-6 d-sm-flex align-items-center">
-                                        <div class="card-chart bg-purple">
-                                            <span class="peity-bar" data-peity='{"fill": ["#fff"], "width": 21, "height": 20 }'>7,4,5,7,2</span>
+                                    </div>
+                                    <h5>Gross sales of July</h5>
+                                    <p class="text-muted mb-0">
+                                        To start a blog, think of a topic about and first
+                                        brainstorm party is ways to write details
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card-body border-bottom">
+                                    <p class="card-title">Cash sales</p>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <canvas id="cash-sales-chart-b"></canvas>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center ms-2">
+                                                <h2 class="font-weight-bold mb-0 me-1">41%</h2>
+                                                <i class="mdi mdi-chevron-up text-success icon-md"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <div>
+                                            <p>Sales last month</p>
+                                            <h2 class="mb-0">1133</h2>
+                                            <div class="d-flex align-items-center mt-2">
+                                                <small>0.387%</small>
+                                                <i class="mdi mdi-chevron-up"></i>
+                                            </div>
                                         </div>
                                         <div>
-                                            <label>Sessions</label>
-                                            <h4>9,065</h4>
+                                            <div class="icon-box-primary icon-box-lg">
+                                                <i class="mdi mdi-wallet"></i>
+                                            </div>
                                         </div>
-                                    </div><!-- col -->
-                                </div><!-- card-body -->
-                            </div><!-- card-dashboard-five -->
-                        </div><!-- col -->
-                        <div class="col-md-6 col-lg-12">
-                            <div class="card card-dashboard-five">
-                                <div class="card-header">
-                                    <h6 class="card-title">Sessions</h6>
-                                    <span class="card-text"> A session is the period time a user is actively engaged with your website, app, etc.</span>
-                                </div><!-- card-header -->
-                                <div class="card-body row row-sm">
-                                    <div class="col-6 d-sm-flex align-items-center">
-                                        <div class="mg-b-10 mg-sm-b-0 mg-sm-r-10">
-                                            <span class="peity-donut" data-peity='{ "fill": ["#007bff", "#cad0e8"],  "innerRadius": 14, "radius": 20 }'>4/7</span>
+                                    </div>
+                                    <h5>Gross sales of August</h5>
+                                    <p class="text-muted mb-0">
+                                        To start a blog, think of a topic about and first
+                                        brainstorm party is ways to write details
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev bg-white"
+                           href="#cashSalesCarousel"
+                           role="button"
+                           data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"
+                                  aria-hidden="true"></span>
+                        </a>
+                        <a class="carousel-control-next bg-white"
+                           href="#cashSalesCarousel"
+                           role="button"
+                           data-bs-slide="next">
+                            <span class="carousel-control-next-icon"
+                                  aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3 grid-margin stretch-card">
+                <div class="card">
+                    <div id="monthlyIncomeCarousel"
+                         class="carousel slide card-carousel"
+                         data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card-body border-bottom">
+                                    <p class="card-title">Monthly income</p>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <canvas id="monthly-income-chart"></canvas>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center ms-2">
+                                                <h2 class="font-weight-bold mb-0 me-1">16%</h2>
+                                                <i class="mdi mdi-chevron-up text-warning icon-md"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <div>
+                                            <p>Sales income</p>
+                                            <h2 class="mb-0">20087</h2>
+                                            <div class="d-flex align-items-center mt-2">
+                                                <small>0.754%</small>
+                                                <i class="mdi mdi-chevron-up"></i>
+                                            </div>
                                         </div>
                                         <div>
-                                            <label>% New Sessions</label>
-                                            <h4>26.80%</h4>
+                                            <div class="icon-box-warning icon-box-lg">
+                                                <i class="mdi mdi-credit-card"></i>
+                                            </div>
                                         </div>
-                                    </div><!-- col -->
-                                    <div class="col-6 d-sm-flex align-items-center">
-                                        <div class="mg-b-10 mg-sm-b-0 mg-sm-r-10">
-                                            <span class="peity-donut" data-peity='{ "fill": ["#00cccc", "#cad0e8"],  "innerRadius": 14, "radius": 20 }'>2/7</span>
+                                    </div>
+                                    <h5>Gross sales of January</h5>
+                                    <p class="text-muted mb-0">
+                                        The first is a non technical method which requires
+                                        the use of adware removal software. Download free
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card-body border-bottom">
+                                    <p class="card-title">Monthly income</p>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <canvas id="monthly-income-chart-b"></canvas>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center ms-2">
+                                                <h2 class="font-weight-bold mb-0 me-1">23%</h2>
+                                                <i class="mdi mdi-chevron-up text-warning icon-md"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <div>
+                                            <p>Sales income</p>
+                                            <h2 class="mb-0">7368</h2>
+                                            <div class="d-flex align-items-center mt-2">
+                                                <small>0.489%</small>
+                                                <i class="mdi mdi-chevron-up"></i>
+                                            </div>
                                         </div>
                                         <div>
-                                            <label>Pages/Session</label>
-                                            <h4>1,005</h4>
+                                            <div class="icon-box-warning icon-box-lg">
+                                                <i class="mdi mdi-credit-card"></i>
+                                            </div>
                                         </div>
-                                    </div><!-- col -->
-                                </div><!-- card-body -->
-                            </div><!-- card-dashboard-five -->
-                        </div><!-- col -->
-                    </div><!-- row -->
-                </div><!-- col-lg-3 -->
-                <div class="col-lg-7 col-xl-8 mg-t-20 mg-lg-t-0">
-                    <div class="card card-table-one">
-                        <h6 class="card-title">What pages do your users visit</h6>
-                        <p class="az-content-text mg-b-20">Part of this date range occurs before the new users metric had been calculated, so the old users metric is displayed.</p>
+                                    </div>
+                                    <h5>Gross sales of February</h5>
+                                    <p class="text-muted mb-0">
+                                        The first is a non technical method which requires
+                                        the use of adware removal software. Download free
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev bg-white"
+                           href="#monthlyIncomeCarousel"
+                           role="button"
+                           data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"
+                                  aria-hidden="true"></span>
+                        </a>
+                        <a class="carousel-control-next bg-white"
+                           href="#monthlyIncomeCarousel"
+                           role="button"
+                           data-bs-slide="next">
+                            <span class="carousel-control-next-icon"
+                                  aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3 grid-margin stretch-card">
+                <div class="card">
+                    <div id="yearlySalesCarousel"
+                         class="carousel slide card-carousel"
+                         data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card-body border-bottom">
+                                    <p class="card-title">Yearly sales</p>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <canvas id="yearly-sales-chart"></canvas>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center ms-2">
+                                                <h2 class="font-weight-bold mb-0 me-1">52%</h2>
+                                                <i class="mdi mdi-chevron-down text-danger icon-md"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <div>
+                                            <p>Purchases</p>
+                                            <h2 class="mb-0">8304</h2>
+                                            <div class="d-flex align-items-center mt-2">
+                                                <small>0.846%</small>
+                                                <i class="mdi mdi-chevron-down"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="icon-box-info icon-box-lg">
+                                                <i class="mdi mdi-cart"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h5>Gross sales of March</h5>
+                                    <p class="text-muted mb-0">
+                                        While most people enjoy casino gambling, sports
+                                        betting, lottery and bingo playing for the fun and
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card-body border-bottom">
+                                    <p class="card-title">Yearly sales</p>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <canvas id="yearly-sales-chart-b"></canvas>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center ms-2">
+                                                <h2 class="font-weight-bold mb-0 me-1">29%</h2>
+                                                <i class="mdi mdi-chevron-down text-danger icon-md"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <div>
+                                            <p>Purchases</p>
+                                            <h2 class="mb-0">8543</h2>
+                                            <div class="d-flex align-items-center mt-2">
+                                                <small>0.795%</small>
+                                                <i class="mdi mdi-chevron-down"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="icon-box-info icon-box-lg">
+                                                <i class="mdi mdi-cart"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h5>Gross sales of April</h5>
+                                    <p class="text-muted mb-0">
+                                        While most people enjoy casino gambling, sports
+                                        betting, lottery and bingo playing for the fun and
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev bg-white"
+                           href="#yearlySalesCarousel"
+                           role="button"
+                           data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"
+                                  aria-hidden="true"></span>
+                        </a>
+                        <a class="carousel-control-next bg-white"
+                           href="#yearlySalesCarousel"
+                           role="button"
+                           data-bs-slide="next">
+                            <span class="carousel-control-next-icon"
+                                  aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3 grid-margin stretch-card">
+                <div class="card">
+                    <div id="dailyDepositsCarousel"
+                         class="carousel slide card-carousel"
+                         data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card-body border-bottom">
+                                    <p class="card-title">Daily deposits</p>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <canvas id="daily-deposits-chart"></canvas>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center ms-2">
+                                                <h2 class="font-weight-bold mb-0 me-1">19%</h2>
+                                                <i class="mdi mdi-chevron-up text-success icon-md"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <div>
+                                            <p>Security deposits</p>
+                                            <h2 class="mb-0">2388</h2>
+                                            <div class="d-flex align-items-center mt-2">
+                                                <small>0.321%</small>
+                                                <i class="mdi mdi-chevron-up"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="icon-box-success icon-box-lg">
+                                                <i class="mdi mdi-calendar-heart"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h5>Gross sales of May</h5>
+                                    <p class="text-muted mb-0">
+                                        According to the research firm Frost & Sullivan, the
+                                        estimated size of the North American used test
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card-body border-bottom">
+                                    <p class="card-title">Daily deposits</p>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <canvas id="daily-deposits-chart-b"></canvas>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center ms-2">
+                                                <h2 class="font-weight-bold mb-0 me-1">33%</h2>
+                                                <i class="mdi mdi-chevron-up text-success icon-md"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <div>
+                                            <p>Security deposits</p>
+                                            <h2 class="mb-0">7589</h2>
+                                            <div class="d-flex align-items-center mt-2">
+                                                <small>0.321%</small>
+                                                <i class="mdi mdi-chevron-up"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="icon-box-success icon-box-lg">
+                                                <i class="mdi mdi-calendar-heart"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h5>Gross sales of June</h5>
+                                    <p class="text-muted mb-0">
+                                        According to the research firm Frost & Sullivan, the
+                                        estimated size of the North American used test
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev bg-white"
+                           href="#dailyDepositsCarousel"
+                           role="button"
+                           data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"
+                                  aria-hidden="true"></span>
+                        </a>
+                        <a class="carousel-control-next bg-white"
+                           href="#dailyDepositsCarousel"
+                           role="button"
+                           data-bs-slide="next">
+                            <span class="carousel-control-next-icon"
+                                  aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title">Cash deposits</p>
+                        <p class="mb-4">
+                            To start a blog, think of a topic about and first
+                            brainstorm party is ways to write details
+                        </p>
+                        <div id="cash-deposits-chart-legend"
+                             class="d-flex justify-content-center pt-3 legend-small"></div>
+                        <canvas id="cash-deposits-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title">Total sales</p>
+                        <h1>$ 28835</h1>
+                        <h4>Gross sales over the years</h4>
+                        <p class="text-muted">
+                            Today, many people rely on computers to do homework, work,
+                            and create or store useful information. Therefore, it is
+                            important
+                        </p>
+                        <div id="total-sales-chart-legend"
+                             class="legend-small"></div>
+                    </div>
+                    <canvas id="total-sales-chart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title">Recent Purchases</p>
                         <div class="table-responsive">
-                            <table class="table">
+                            <table id="recent-purchases-listing" class="table">
                                 <thead>
                                     <tr>
-                                        <th class="wd-5p">&nbsp;</th>
-                                        <th class="wd-45p">Country</th>
-                                        <th>Entrances</th>
-                                        <th>Bounce Rate</th>
-                                        <th>Exits</th>
+                                        <th>Name</th>
+                                        <th>Status report</th>
+                                        <th>Office</th>
+                                        <th>Price</th>
+                                        <th>Date</th>
+                                        <th>Gross amount</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><i class="flag-icon flag-icon-us flag-icon-squared"></i></td>
-                                        <td><strong>United States</strong></td>
-                                        <td><strong>134</strong> (1.51%)</td>
-                                        <td>33.58%</td>
-                                        <td>15.47%</td>
+                                        <td>Jeremy Ortega</td>
+                                        <td>Levelled up</td>
+                                        <td>Catalinaborough</td>
+                                        <td>$790</td>
+                                        <td>06 Jan 2018</td>
+                                        <td>$2274253</td>
                                     </tr>
                                     <tr>
-                                        <td><i class="flag-icon flag-icon-gb flag-icon-squared"></i></td>
-                                        <td><strong>United Kingdom</strong></td>
-                                        <td><strong>290</strong> (3.30%)</td>
-                                        <td>9.22%</td>
-                                        <td>7.99%</td>
+                                        <td>Alvin Fisher</td>
+                                        <td>Ui design completed</td>
+                                        <td>East Mayra</td>
+                                        <td>$23230</td>
+                                        <td>18 Jul 2018</td>
+                                        <td>$83127</td>
                                     </tr>
                                     <tr>
-                                        <td><i class="flag-icon flag-icon-in flag-icon-squared"></i></td>
-                                        <td><strong>India</strong></td>
-                                        <td><strong>250</strong> (3.00%)</td>
-                                        <td>20.75%</td>
-                                        <td>2.40%</td>
+                                        <td>Emily Cunningham</td>
+                                        <td>support</td>
+                                        <td>Makennaton</td>
+                                        <td>$939</td>
+                                        <td>16 Jul 2018</td>
+                                        <td>$29177</td>
                                     </tr>
                                     <tr>
-                                        <td><i class="flag-icon flag-icon-ca flag-icon-squared"></i></td>
-                                        <td><strong>Canada</strong></td>
-                                        <td><strong>216</strong> (2.79%)</td>
-                                        <td>32.07%</td>
-                                        <td>15.09%</td>
+                                        <td>Minnie Farmer</td>
+                                        <td>support</td>
+                                        <td>Agustinaborough</td>
+                                        <td>$30</td>
+                                        <td>30 Apr 2018</td>
+                                        <td>$44617</td>
                                     </tr>
                                     <tr>
-                                        <td><i class="flag-icon flag-icon-fr flag-icon-squared"></i></td>
-                                        <td><strong>France</strong></td>
-                                        <td><strong>216</strong> (2.79%)</td>
-                                        <td>32.07%</td>
-                                        <td>15.09%</td>
+                                        <td>Betty Hunt</td>
+                                        <td>Ui design not completed</td>
+                                        <td>Lake Sandrafort</td>
+                                        <td>$571</td>
+                                        <td>25 Jun 2018</td>
+                                        <td>$78952</td>
                                     </tr>
                                     <tr>
-                                        <td><i class="flag-icon flag-icon-ph flag-icon-squared"></i></td>
-                                        <td><strong>Philippines</strong></td>
-                                        <td><strong>197</strong> (2.12%)</td>
-                                        <td>32.07%</td>
-                                        <td>15.09%</td>
+                                        <td>Myrtie Lambert</td>
+                                        <td>Ui design completed</td>
+                                        <td>Cassinbury</td>
+                                        <td>$36</td>
+                                        <td>05 Nov 2018</td>
+                                        <td>$36422</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jacob Kennedy</td>
+                                        <td>New project</td>
+                                        <td>Cletaborough</td>
+                                        <td>$314</td>
+                                        <td>12 Jul 2018</td>
+                                        <td>$34167</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ernest Wade</td>
+                                        <td>Levelled up</td>
+                                        <td>West Fidelmouth</td>
+                                        <td>$484</td>
+                                        <td>08 Sep 2018</td>
+                                        <td>$50862</td>
                                     </tr>
                                 </tbody>
                             </table>
-                        </div><!-- table-responsive -->
-                    </div><!-- card -->
-                </div><!-- col-lg -->
-
-            </div><!-- row -->
-        </div><!-- az-content-body -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 grid-margin grid-margin-md-0 stretch-card">
+                <div class="card border-0 bg-primary text-white">
+                    <div id="downloads-carousel"
+                         class="carousel slide card-carousel"
+                         data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card-body pb-0">
+                                    <p class="card-title text-white">Downloads</p>
+                                    <h1>8543</h1>
+                                    <h4>Growth 58%</h4>
+                                </div>
+                                <canvas height="110" id="downloads-chart-a"></canvas>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card-body pb-0">
+                                    <p class="card-title text-white">Uploads</p>
+                                    <h1>4533</h1>
+                                    <h4>Growth 32%</h4>
+                                </div>
+                                <canvas height="110" id="downloads-chart-b"></canvas>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev control-light"
+                           href="#downloads-carousel"
+                           role="button"
+                           data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"
+                                  aria-hidden="true"></span>
+                        </a>
+                        <a class="carousel-control-next control-light"
+                           href="#downloads-carousel"
+                           role="button"
+                           data-bs-slide="next">
+                            <span class="carousel-control-next-icon"
+                                  aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 grid-margin grid-margin-md-0 stretch-card">
+                <div class="card border-0 bg-warning text-white">
+                    <div id="feedbacks-carousel"
+                         class="carousel slide card-carousel"
+                         data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card-body pb-0">
+                                    <p class="card-title text-white">feedbacks</p>
+                                    <h1>3568</h1>
+                                    <h4>Growth 12%</h4>
+                                </div>
+                                <canvas height="110" id="feedbacks-chart-a"></canvas>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card-body pb-0">
+                                    <p class="card-title text-white">feedbacks</p>
+                                    <h1>8290</h1>
+                                    <h4>Growth 11%</h4>
+                                </div>
+                                <canvas height="110" id="feedbacks-chart-b"></canvas>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev control-light"
+                           href="#feedbacks-carousel"
+                           role="button"
+                           data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"
+                                  aria-hidden="true"></span>
+                        </a>
+                        <a class="carousel-control-next control-light"
+                           href="#feedbacks-carousel"
+                           role="button"
+                           data-bs-slide="next">
+                            <span class="carousel-control-next-icon"
+                                  aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 grid-margin grid-margin-md-0 stretch-card">
+                <div class="card border-0 bg-success text-white">
+                    <div id="customers-carousel"
+                         class="carousel slide card-carousel"
+                         data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card-body pb-0">
+                                    <p class="card-title text-white">customers</p>
+                                    <h1>4567</h1>
+                                    <h4>Growth 31%</h4>
+                                </div>
+                                <canvas height="110" id="customers-chart-a"></canvas>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card-body pb-0">
+                                    <p class="card-title text-white">Users</p>
+                                    <h1>1782</h1>
+                                    <h4>Growth 62%</h4>
+                                </div>
+                                <canvas height="110" id="customers-chart-b"></canvas>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev control-light"
+                           href="#customers-carousel"
+                           role="button"
+                           data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"
+                                  aria-hidden="true"></span>
+                        </a>
+                        <a class="carousel-control-next control-light"
+                           href="#customers-carousel"
+                           role="button"
+                           data-bs-slide="next">
+                            <span class="carousel-control-next-icon"
+                                  aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div><!-- az-content -->
+    <!-- content-wrapper ends -->

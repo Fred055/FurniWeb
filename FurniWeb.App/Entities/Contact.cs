@@ -13,5 +13,6 @@ namespace FurniWeb.App.Entities
         public string Email { get; set; }
         [MaxLength(100)]
         public string Message { get; set; }
+        public bool Status { get; set; }
     }
 }
