@@ -1,0 +1,16 @@
+﻿@model ContactGetDto
+@{
+    int i = 0;
+
+}
+
+<div class="container">
+    <h3>@Model.Id</h3>>
+    <h3>@Model.FirstName</h3>>
+    <h3>@Model.Lastname</h3>
+    <h3>@Model.Email</h3>>
+    <h3>@Model.Status</h3>>
+    <h3>@Model.CreatedAt</h3>>
+    <a asp-controller="contact" asp-action="index" class="btn btn primary">Back to Index</a>
+</div>
+
