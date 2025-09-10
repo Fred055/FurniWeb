@@ -38,7 +38,7 @@ namespace FurniWeb.App.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(ContractCreateDto dto)
+        public async Task<IActionResult> Create(ContactCreateDto dto)
         {
             if (!ModelState.IsValid)
             {
@@ -72,7 +72,7 @@ namespace FurniWeb.App.Areas.Admin.Controllers
                 FirstName = contact.FirstName,
                 Lastname = contact.Lastname,
                 Message = contact.Message,
-                Status = contact.Status
+                Status = contact.Status,
                 CreatedAt = contact.CreatedAt
             };
             return View(dto);
@@ -82,6 +82,7 @@ namespace FurniWeb.App.Areas.Admin.Controllers
         public async Task<IActionResult> Delete(Guid id)
         {
             var contact = await _context.Contacts.FirstOrDefaultAsync(c => c.Id == id && !c.IsDeleted);
+            if (contact == null)
             {
                 return NotFound();
             }
@@ -98,7 +99,7 @@ namespace FurniWeb.App.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            contact.Status = Furniture;
+            contact.Status = true;
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
