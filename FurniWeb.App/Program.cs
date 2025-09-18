@@ -1,11 +1,19 @@
 using FurniWeb.App.Constants;
 using FurniWeb.App.Context;
+using FurniWeb.App.Repository.Abstracts.R_Position;
+using FurniWeb.App.Repository.Abstracts.RContact;
+using FurniWeb.App.Repository.Concretes.RContact;
+using FurniWeb.App.Repository.Concretes.RPosition;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IContactReadRepository, ContactReadRepository>();
+builder.Services.AddScoped<IContactWriteRepository, ContactWriteRepository>();
+builder.Services.AddScoped<IPositionReadRepository, PositionReadRepository>();
+builder.Services.AddScoped<IPositionWriteRepository, PositionWriteRepository>();
 builder.Services.AddDbContext<AppDbContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString(ConnectionNames.DefaultConnectionName));

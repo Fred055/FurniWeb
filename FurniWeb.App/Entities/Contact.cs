@@ -9,7 +9,7 @@ namespace FurniWeb.App.Entities
         public string FirstName { get; set; }
         [MaxLength(30)]
         public string Lastname { get; set; }
-        [MaxLength(10)]
+        [MaxLength(100)]
         public string Email { get; set; }
         [MaxLength(100)]
         public string Message { get; set; }

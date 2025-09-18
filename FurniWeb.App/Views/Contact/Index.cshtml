@@ -1,4 +1,5 @@
-﻿<!-- Start Hero Section -->
+﻿@model ContactCreateDto
+<!-- Start Hero Section -->
 <div class="hero">
     <div class="container">
         <div class="row justify-content-between">
@@ -70,31 +71,30 @@
                         </div>
                     </div>
 
-                    <form>
+                    <form method="post">
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label class="text-black" for="fname">First name</label>
-                                    <input type="text" class="form-control" id="fname">
+                                    <label class="text-black" asp-for="@Model.FirstName"></label>
+                                    <input type="text" class="form-control" asp-for="@Model.FirstName">
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label class="text-black" for="lname">Last name</label>
-                                    <input type="text" class="form-control" id="lname">
+                                    <label class="text-black" asp-for="@Model.Lastname"></label>
+                                    <input type="text" class="form-control" asp-for="@Model.Lastname">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="text-black" for="email">Email address</label>
-                            <input type="email" class="form-control" id="email">
+                            <label class="text-black" asp-for="@Model.Email"></label>
+                            <input type="email" class="form-control" asp-for="@Model.Email">
                         </div>
 
                         <div class="form-group mb-5">
-                            <label class="text-black" for="message">Message</label>
-                            <textarea name="" class="form-control" id="message" cols="30" rows="5"></textarea>
+                            <label class="text-black" asp-for="@Model.Message">Message</label>
+                            <textarea name="" class="form-control" asp-for="@Model.Message" cols="30" rows="5"></textarea>
                         </div>
-
                         <button type="submit" class="btn btn-primary-hover-outline">Send Message</button>
                     </form>
 
@@ -108,6 +108,3 @@
 
 
 </div>
-</div>
-
-<!-- End Contact Form -->

@@ -22,13 +22,21 @@
             @foreach (var contact in Model)
             {
                 <tr>
-                    <th scope="row">1</th>
-                    <td><a asp-controller="contact" asp-action="GetById" asp-route="@contact.Id">@contact.FirstName</a></td>
+                    <th scope="row">@i</th>
+                    <td><a asp-controller="contact" asp-action="GetById" asp-route-id="@contact.Id">@contact.FirstName</a></td>
                     <td>@contact.Email</td>
                     <td>@contact.Status</td>
-                    <td><a asp-controller="contact" asp-action="delete" asp-route-id="@contact.Id"><i class="bi bi-trash"></i>Delete</a></td>
-                    <td><a><i class="fa-solid fa-pencil">Edit</i></a></td>
-                    <td><a asp-controller="contact" asp-action="ChangeStatus" asp-route-id="@contact.Id as class="btn btn-success">Change Status</a></td>
+                    <td><a asp-controller="contact" asp-action="delete" asp-route-id="@contact.Id"><i class="btn btn-danger"></i>Delete</a></td>
+                    <td><a class="btn btn-primary">Edit</a></td>
+                    @if(contact.Status == true)
+                    {
+                        <td><a asp-controller="contact" asp-action="ChangeStatus" asp-route-id="@contact.Id" class="btn btn-warning">Make Passive</a></td>
+                    }
+                    else
+                    {
+                        <td><a asp-controller="contact" asp-action="ChangeStatus" asp-route-id="@contact.Id" class="btn btn-success">Reverse Status</a></td>
+                    }
+    )
 
                 </tr>
                 i++;

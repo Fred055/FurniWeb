@@ -3,26 +3,26 @@
     Layout = Layout;
 }
 
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
 <div class="container">
     <form method="post">
         <label asp-for="FirstName"></label><br>
-        <label asp-for="FirstName">FirstName</label><br>
-        <span asp-validation-for="FirstName" class="text-danger"></span><br>
-
-
+        <input type="text" asp-for="FirstName"><br><br>
+        <span asp-validation-for="FirstName" class="text-danger"></span>
 
         <label asp-for="Lastname"></label><br>
-        <label asp-for="Lastname">Lastname</label><br>
-        <span asp-validation-for="Lastname" class="text-danger"></span><br>
+        <input type="text" asp-for="Lastname"><br><br>
+        <span asp-validation-for="Lastname" class="text-danger"></span>
 
         <label asp-for="Email"></label><br>
-        <label asp-for="Email">Email</label><br>
-        <span asp-validation-for="Email" class="text-danger"></span><br>
-        <input type="submit" value="Submit">
+        <input type="text" asp-for="Email"><br><br>
+        <span asp-validation-for="Email" class="text-danger"></span>
 
         <label asp-for="Message"></label><br>
-        <label asp-for="Message">Message</label><br>
-        <span asp-validation-for="Message" class="text-danger"></span><br>
+        <input type="text" asp-for="Message"><br><br>
+        <span asp-validation-for="Message" class="text-danger"></span>
+        <input type="submit" class="btn btn-success" value="Submit">
         @Html.AntiForgeryToken()
     </form>
 </div>
