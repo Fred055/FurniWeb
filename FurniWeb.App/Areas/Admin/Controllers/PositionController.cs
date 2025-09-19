@@ -95,5 +95,6 @@ namespace BabatMebel.App.Areas.Admin.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
     }
 }
