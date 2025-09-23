@@ -8,7 +8,9 @@ namespace FurniWeb.App.Entities
         [Required]
         [MaxLength(50)]
         public string Name { get; set; }
+        public string Image { get; set; }
         public string ImageUrl { get; set; }
+
         [Required]
         [Range(0, 10000)]
         public double Price { get; set; }

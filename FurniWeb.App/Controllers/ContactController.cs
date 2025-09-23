@@ -21,6 +21,7 @@ namespace FurniWeb.App.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Post([FromBody] ContactCreateDto dto)
         {
             if (!ModelState.IsValid)

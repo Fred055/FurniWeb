@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BabatMebel.App.Dtos.EmployeeDtos
+namespace FurniWeb.App.Dtos.EmployeeDtos
 {
     public class EmployeeCreateDto
     {

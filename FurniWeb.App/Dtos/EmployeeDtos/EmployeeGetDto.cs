@@ -1,4 +1,4 @@
-﻿namespace BabatMebel.App.Dtos.EmployeeDtos
+﻿namespace FurniWeb.App.Dtos.EmployeeDtos
 {
     public class EmployeeGetDto
     {

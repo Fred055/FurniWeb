@@ -1,6 +1,6 @@
 ﻿
-using BabatMebel.App.Dtos.EmployeeDtos;
 using FurniWeb.App.Context;
+using FurniWeb.App.Dtos.EmployeeDtos;
 using FurniWeb.App.Entities;
 using FurniWeb.App.Repository.Abstracts.R_Position;
 using FurniWeb.App.Repository.Abstracts.REmployee;
@@ -8,7 +8,7 @@ using FurniWeb.App.Repository.Concretes.RPosition;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace BabatMebel.App.Areas.Admin.Controllers
+namespace FurniWeb.App.Areas.Admin.Controllers
 {
     [Area("admin")]
     public class EmployeeController : Controller

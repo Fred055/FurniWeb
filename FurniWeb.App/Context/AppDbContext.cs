@@ -1,9 +1,10 @@
 ﻿using FurniWeb.App.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace FurniWeb.App.Context
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<AppUser>
     {
         public DbSet<Author> Authors { get; set; }
         public DbSet<Blog> Blogs { get; set; }
