@@ -4,6 +4,7 @@ using FurniWeb.App.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FurniWeb.App.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250924114757_mig_5")]
+    partial class mig_5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,9 +36,6 @@ namespace FurniWeb.App.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -121,65 +121,6 @@ namespace FurniWeb.App.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Authors");
-                });
-
-            modelBuilder.Entity("FurniWeb.App.Entities.Basket", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("AppUserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserId");
-
-                    b.ToTable("Basket");
-                });
-
-            modelBuilder.Entity("FurniWeb.App.Entities.BasketItem", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("BasketId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("FurnitureId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("ItemCount")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BasketId");
-
-                    b.HasIndex("FurnitureId");
-
-                    b.ToTable("BasketItem");
                 });
 
             modelBuilder.Entity("FurniWeb.App.Entities.Blog", b =>
@@ -443,37 +384,6 @@ namespace FurniWeb.App.Migrations
                     b.ToTable("Settings");
                 });
 
-            modelBuilder.Entity("FurniWeb.App.Entities.Subscribe", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Subscribe");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -607,36 +517,6 @@ namespace FurniWeb.App.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("FurniWeb.App.Entities.Basket", b =>
-                {
-                    b.HasOne("FurniWeb.App.Entities.AppUser", "User")
-                        .WithMany("Baskets")
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("FurniWeb.App.Entities.BasketItem", b =>
-                {
-                    b.HasOne("FurniWeb.App.Entities.Basket", "Basket")
-                        .WithMany("BasketItems")
-                        .HasForeignKey("BasketId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FurniWeb.App.Entities.Furniture", "Furniture")
-                        .WithMany("BasketItems")
-                        .HasForeignKey("FurnitureId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Basket");
-
-                    b.Navigation("Furniture");
-                });
-
             modelBuilder.Entity("FurniWeb.App.Entities.Blog", b =>
                 {
                     b.HasOne("FurniWeb.App.Entities.Author", "Author")
@@ -718,29 +598,14 @@ namespace FurniWeb.App.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("FurniWeb.App.Entities.AppUser", b =>
-                {
-                    b.Navigation("Baskets");
-                });
-
             modelBuilder.Entity("FurniWeb.App.Entities.Author", b =>
                 {
                     b.Navigation("Blogs");
                 });
 
-            modelBuilder.Entity("FurniWeb.App.Entities.Basket", b =>
-                {
-                    b.Navigation("BasketItems");
-                });
-
             modelBuilder.Entity("FurniWeb.App.Entities.Employee", b =>
                 {
                     b.Navigation("Positions");
-                });
-
-            modelBuilder.Entity("FurniWeb.App.Entities.Furniture", b =>
-                {
-                    b.Navigation("BasketItems");
                 });
 
             modelBuilder.Entity("FurniWeb.App.Entities.Position", b =>

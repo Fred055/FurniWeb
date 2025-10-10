@@ -17,6 +17,7 @@ namespace FurniWeb.App.Context
         public DbSet<Service> Services { get; set; }
         public DbSet<Setting> Settings { get; set; }
 
+        public DbSet<Subscribe> Subscribe { get; set; }
 
 
 

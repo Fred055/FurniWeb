@@ -1,4 +1,4 @@
-﻿namespace BabatMebel.App.Dtos.PositionDtos
+﻿namespace FurniWeb.App.Dtos.PositionDtos
 {
     public class PositionUpdateDto
     {

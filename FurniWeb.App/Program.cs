@@ -2,13 +2,19 @@ using FurniWeb.App.Constants;
 using FurniWeb.App.Context;
 using FurniWeb.App.Entities;
 using FurniWeb.App.Repository.Abstracts.R_Position;
+using FurniWeb.App.Repository.Abstracts.RBasket;
+using FurniWeb.App.Repository.Abstracts.RBasketItem;
 using FurniWeb.App.Repository.Abstracts.RContact;
 using FurniWeb.App.Repository.Abstracts.REmployee;
 using FurniWeb.App.Repository.Abstracts.RFurniture;
+using FurniWeb.App.Repository.Concretes.RBasket;
+using FurniWeb.App.Repository.Concretes.RBasketItem;
 using FurniWeb.App.Repository.Concretes.RContact;
 using FurniWeb.App.Repository.Concretes.REmployee;
 using FurniWeb.App.Repository.Concretes.RFurniture;
 using FurniWeb.App.Repository.Concretes.RPosition;
+using FurniWeb.App.Services.Abstractions;
+using FurniWeb.App.Services.Concretes;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -34,6 +40,15 @@ namespace FurniWeb.App
 
             builder.Services.AddScoped<IFurnitureReadRepository, FurnitureReadRepository>();
             builder.Services.AddScoped<IFurnitureWriteRepository, FurnitureWriteRepository>();
+
+            builder.Services.AddScoped<IBasketReadRepository, BasketReadRepository>();
+            builder.Services.AddScoped<IBasketWriteRepository, BasketWriteRepository>();
+
+            builder.Services.AddScoped<IBasketItemReadRepository, BasketItemReadRepository>();
+            builder.Services.AddScoped<IBasketItemWriteRepository, BasketItemWriteRepository>();
+
+            builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IBasketService, BasketService>();
 
             builder.Services.AddDbContext<AppDbContext>(opt =>
             {
@@ -79,7 +94,9 @@ namespace FurniWeb.App
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+
 
 
             app.MapAreaControllerRoute(

@@ -1,5 +1,6 @@
 ﻿using FurniWeb.App.Dtos.UserDtos;
 using FurniWeb.App.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,10 +9,12 @@ namespace FurniWeb.App.Controllers
     public class AccountController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
 
-        public AccountController(UserManager<AppUser> userManager)
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         public IActionResult Index()
@@ -48,11 +51,138 @@ namespace FurniWeb.App.Controllers
                 {
                     ModelState.AddModelError("", error.Description);
                 }
+                return View(dto);
             }
 
             await _userManager.AddToRoleAsync(user, "User");
 
             return RedirectToAction("index", "home");
         }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+
+        public async Task<IActionResult> Login(LoginUserDto dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(dto);
+            }
+
+            var user = await _userManager.FindByEmailAsync(dto.Email);
+
+            if (user == null)
+            {
+                ModelState.AddModelError("", "Email or Password is wrong");
+                return View(dto);
+            }
+            Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(user, dto.Password, dto.IsRememberMe, true);
+
+            if (!result.Succeeded)
+            {
+                if (result.IsLockedOut)
+                {
+
+                    ModelState.AddModelError("", "Your account is blocked for 5 minutes");
+                    return View(dto);
+                }
+                ModelState.AddModelError("", "Email or Password is wrong");
+                return View(dto);
+            }
+            return RedirectToAction("index", "home");
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("index", "home");
+        }
+
+        [Authorize]
+        public async Task<IActionResult> GetUserInfo()
+        {
+            string userName = User.Identity.Name;
+
+
+            if (userName == null)
+            {
+                return NotFound();
+
+            }
+
+            var appuser = await _userManager.FindByNameAsync(userName);
+            return View(appuser);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Update(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var userUpdatedto = new UserUpdateDto()
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                UserName = user.UserName,
+                Email = user.Email
+            };
+            return View(userUpdatedto);
+        }
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Update(string id, UserUpdateDto dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(dto);
+            }
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            user.FirstName = dto.FirstName ?? user.FirstName;
+            user.LastName = dto.LastName ?? user.LastName;
+            user.UserName = dto.UserName ?? user.UserName;
+            user.Email = dto.Email ?? user.Email;
+
+            var result = await _userManager.UpdateAsync(user);
+
+            if (!result.Succeeded)
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+                return View(dto);
+            }
+
+            //var claims = new List<Claim>()
+            //{
+            //    new Claim(ClaimTypes.Name, user.UserName),
+
+            //};
+            //var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+            //var authProperties = new AuthenticationProperties
+            //{
+            //    IsPersistent = true,
+            //    ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(30)
+            //};
+            //await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
+
+
+
+            return RedirectToAction(nameof(GetUserInfo));
+        }
+
     }
 }
